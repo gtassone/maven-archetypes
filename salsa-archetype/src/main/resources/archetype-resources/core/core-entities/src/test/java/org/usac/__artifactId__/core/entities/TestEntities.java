@@ -132,7 +132,7 @@ public class TestEntities {
 	private static IDataSet getDataSet() throws MalformedURLException,
 			DataSetException {
 		FlatXmlDataSetBuilder builder = new FlatXmlDataSetBuilder();
-		return builder.build(TestPicanteEntities.class.getClassLoader()
+		return builder.build(TestEntities.class.getClassLoader()
 				.getResourceAsStream(DBUNIT_TEST_DATA_FILE));
 	}
 
@@ -153,7 +153,7 @@ public class TestEntities {
 
 	private static Properties loadProperties() throws IOException {
 		Properties properties = new Properties();
-		properties.load(TestPicanteEntities.class.getClassLoader()
+		properties.load(TestEntities.class.getClassLoader()
 				.getResourceAsStream(UNIT_TEST_PROPERTIES_FILE));
 		return properties;
 	}

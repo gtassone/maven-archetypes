@@ -1,4 +1,4 @@
-package org.usac.${entityId}.core.entities;
+package org.usac.${artifactId}.core.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
