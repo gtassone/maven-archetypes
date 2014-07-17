@@ -1,86 +1,123 @@
+
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set($symbol_escape = '\' )
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>${groupId}</groupId>
 	<artifactId>${artifactId}</artifactId>
-	<version>${version}</version>
 	<packaging>jar</packaging>
 	<name>${projectName}</name>
 
-	<properties>
-		<maven.compiler.target>1.7</maven.compiler.target>
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+	<parent>
+		<groupId>${groupId}</groupId>
+		<artifactId>${parentArtifactId}</artifactId>
+		<version>${version}</version>
+	</parent>
 
 	<dependencies>
 
 		<dependency>
-			<groupId>${modelGroupId}</groupId>
+			<groupId>${groupId}</groupId>
 			<artifactId>${modelArtifactId}</artifactId>
-			<version>${modelVersion}</version>
+			<version>${symbol_dollar}{project.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>org.usac.salsa</groupId>
+			<groupId>${groupId}</groupId>
 			<artifactId>jpa-schema-generator</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${symbol_dollar}{project.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.dbunit</groupId>
+			<artifactId>dbunit</artifactId>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.30</version>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derby</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		
+		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.1-api</artifactId>
-			<version>1.0.0.Final</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.3.5.Final</version>
+			<scope>test</scope>
 		</dependency>
+
 
 	</dependencies>
 
 	<build>
 		<finalName>${artifactId}</finalName>
 
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.3.1</version>
-				<executions>
-					<execution>
-						<phase>test</phase>
-						<goals>
-							<goal>java</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<mainClass>org.usac.salsa.util.jpa.SchemaGenerator</mainClass>
-					<classpathScope>test</classpathScope>
-					<arguments>
-						<argument>--persistence-unit=${persistenceUnit}</argument>
-					</arguments>
-				</configuration>
-			</plugin>
-		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>schema-gen</id>
+			<activation>
+				<property>
+					<name>GENERATE_SCHEMA</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<version>1.3.1</version>
+						<executions>
+							<execution>
+								<phase>test</phase>
+								<goals>
+									<goal>java</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<mainClass>${groupId}.tools.jpa.SchemaGenerator</mainClass>
+							<classpathScope>test</classpathScope>
+							<cleanupDaemonThreads>true</cleanupDaemonThreads>
+							<stopUnresponsiveDaemonThreads>true</stopUnresponsiveDaemonThreads>
+							<daemonThreadJoinTimeout>1000</daemonThreadJoinTimeout>
+							<arguments>
+								<argument>--persistence-unit=${persistenceUnit}</argument>
+							</arguments>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>

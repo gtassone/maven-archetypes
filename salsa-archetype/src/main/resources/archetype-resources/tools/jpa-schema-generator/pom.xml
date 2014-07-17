@@ -1,0 +1,65 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>jpa-schema-generator</artifactId>
+	<packaging>jar</packaging>
+	<name>jpa-schema-generator</name>
+
+	<parent>
+        <groupId>${groupId}</groupId>
+		<artifactId>tools</artifactId>
+		<version>${version}</version>
+	</parent>
+
+	<properties>
+	</properties>
+
+	<dependencies>
+
+		<!-- depends on the jpa-common project in ../common/jpa-common -->
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>jpa-common</artifactId>
+			<version>${symbol_dollar}{project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+		</dependency>
+		<!-- <dependency> <groupId>org.eclipse.persistence</groupId> <artifactId>eclipselink</artifactId> 
+			<version>2.5.1</version> <scope>compile</scope> </dependency> -->
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sf.jopt-simple</groupId>
+			<artifactId>jopt-simple</artifactId>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>jpa-schema-generator</finalName>
+	</build>
+</project>

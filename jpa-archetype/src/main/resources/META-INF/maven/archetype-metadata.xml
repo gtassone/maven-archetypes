@@ -8,16 +8,16 @@
 		<requiredProperty key="projectName">
 			<defaultValue />
 		</requiredProperty>
-		<requiredProperty key="modelGroupId">
+		<requiredProperty key="parentArtifactId">
 			<defaultValue />
 		</requiredProperty>
 		<requiredProperty key="modelArtifactId">
 			<defaultValue />
 		</requiredProperty>
-		<requiredProperty key="modelVersion">
+		<requiredProperty key="persistenceUnit">
 			<defaultValue />
 		</requiredProperty>
-		<requiredProperty key="persistenceUnit">
+		<requiredProperty key="PersistenceUnitClass">
 			<defaultValue />
 		</requiredProperty>
 	</requiredProperties>
