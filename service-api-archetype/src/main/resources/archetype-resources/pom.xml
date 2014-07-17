@@ -18,6 +18,12 @@
 
 	<dependencies>
 
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>core-service</artifactId>
+            <version>${symbol_dollar}{project.version}</version>
+        </dependency>
+        
 		<dependency>
 			<groupId>${groupId}</groupId>
 			<artifactId>${modelArtifactId}</artifactId>

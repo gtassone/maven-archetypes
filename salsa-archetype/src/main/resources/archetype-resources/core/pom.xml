@@ -17,6 +17,11 @@
     </parent>
 
     <modules>
+        <module>core-utils</module>
+        <module>core-model</module>
+        <module>core-entities</module>
+        <module>core-service</module>
+        <module>core-querydsl</module>
     </modules>
     
     <dependencies>

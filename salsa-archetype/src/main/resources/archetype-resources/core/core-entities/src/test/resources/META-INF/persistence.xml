@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="${artifactId}-entities-test"
+		transaction-type="RESOURCE_LOCAL">
+		<description>Unit Test persistence unit for core-entities project.</description>
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<!-- <jta-data-source></jta-data-source> -->
+		<!-- <non-jta-data-source></non-jta-data-source> -->
+
+		<!-- JPA will require you to list all entity classes in test context! -->
+
+		<properties>
+
+			<property name="javax.persistence.logging.level" value="FINE" />
+			<property name="javax.persistence.logging.thread" value="false" />
+			<property name="javax.persistence.logging.session" value="false" />
+			<property name="javax.persistence.logging.timestamp" value="false" />
+			<property name="javax.persistence.logging.exceptions" value="false" />
+
+
+			<!-- <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" 
+				/> <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/test" 
+				/> <property name="javax.persistence.jdbc.user" value="root" /> <property 
+				name="javax.persistence.jdbc.password" value="root" /> -->
+				
+			<!-- automatic schema generation in the database - values are none, create, 
+				drop, drop-and-create -->
+			<!-- <property name="javax.persistence.schema-generation.database.action" 
+				value="drop-and-create" /> -->
+
+			<!-- automatic schema script generation - values are none, create, drop, 
+				drop-and-create -->
+			<property name="javax.persistence.schema-generation.scripts.action"
+				value="drop-and-create" />
+
+			<!-- source of database schema generation - values are metadata, script, 
+				metadata-then-script, script-then-metadata -->
+			<!-- <property name="javax.persistence.schema-generation.create-source" 
+				value="script" /> -->
+
+			<!-- source of database schema drop - values are metadata, script, metadata-then-script, 
+				script-then-metadata -->
+			<!-- <property name="javax.persistence.schema-generation.drop-source" 
+				value="script" /> -->
+
+			<!-- flag tells persistence provider whether to use CREATE SCHEMA command 
+				or just use existing schema -->
+			<!-- <property name="javax.persistence.schema-generation.create-database-schemas" 
+				value="true" /> -->
+
+			<!-- filepath for generating the create script -->
+			<property name="javax.persistence.schema-generation.scripts.create-target"
+				value="create.ddl" />
+
+			<!-- filepath for generating the drop script -->
+			<property name="javax.persistence.schema-generation.scripts.drop-target"
+				value="drop.ddl" />
+
+			<!-- filepath for sourcing the drop script -->
+			<!-- <property name="javax.persistence.schema-generation.drop-script-source" 
+				value="drop.ddl" /> -->
+
+			<!-- filepath for sourcing the create script -->
+			<!-- <property name="javax.persistence.schema-generation.create-script-source" 
+				value="create.ddl" /> -->
+
+			<!-- database vendor/product name, for establishing JDBC connection -->
+			<!-- <property name="javax.persistence.database-product-name" value="MySQL" 
+				/> -->
+
+			<!-- database product version, for establishing JDBC connection -->
+			<!-- <property name="javax.persistence.database-major-version" value="5" 
+				/> -->
+
+			<!-- database product version, for establishing JDBC connection -->
+			<!-- <property name="javax.persistence.database-minor-version" value="33" 
+				/> -->
+
+			<!-- JEE container-provided connection -->
+			<!-- <property name="javax.persistence.schema-generation.connection" value="namedConnection" 
+				/> -->
+
+			<!-- filepath for loading data from a script -->
+			<!-- <property name="javax.persistence.sql-load-script-source" value="data.sql" 
+				/> -->
+
+		</properties>
+	</persistence-unit>
+</persistence>

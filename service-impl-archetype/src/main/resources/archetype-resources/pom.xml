@@ -18,7 +18,24 @@
 	</parent>
 
 	<dependencies>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>core-model</artifactId>
+            <version>${symbol_dollar}{project.version}</version>
+        </dependency>
 
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>core-service</artifactId>
+            <version>${symbol_dollar}{project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>core-entities</artifactId>
+            <version>${symbol_dollar}{project.version}</version>
+        </dependency>
+        
 		<dependency>
 			<groupId>${groupId}</groupId>
 			<artifactId>${serviceApiArtifactId}</artifactId>
