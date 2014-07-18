@@ -25,8 +25,8 @@
         <module>springmvc-fragment-archetype</module>
         <module>basic-portal-archetype</module>
         <module>springmvc-portal-archetype</module>
-        <module>jsf-fragment-archetype</module>
+<!--         <module>jsf-fragment-archetype</module>
         <module>jsf-portal-archetype</module>
-        <module>jee-service-archetype</module>
+        <module>jee-service-archetype</module> -->
   </modules>
 </project>
