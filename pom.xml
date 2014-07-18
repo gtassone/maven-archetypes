@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.usac.salsa</groupId>
+    <artifactId>archetypes</artifactId>
+    <packaging>pom</packaging>
+    <name>Salsa Archetypes</name>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <modules>
+        <module>archetype-archetype</module>
+        <module>salsa-archetype</module>
+        <module>common-archetype</module>
+        <module>tool-archetype</module>
+        <module>core-archetype</module>
+        <module>model-archetype</module>
+        <module>jpa-archetype</module>
+        <module>querydsl-archetype</module>
+        <module>service-api-archetype</module>
+        <module>service-impl-archetype</module>
+        <module>spring-service-archetype</module>
+        <module>basic-fragment-archetype</module>
+        <module>springmvc-fragment-archetype</module>
+        <module>basic-portal-archetype</module>
+        <module>springmvc-portal-archetype</module>
+        <module>jsf-fragment-archetype</module>
+        <module>jsf-portal-archetype</module>
+        <module>jee-service-archetype</module>
+  </modules>
+</project>
