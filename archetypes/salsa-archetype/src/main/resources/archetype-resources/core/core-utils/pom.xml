@@ -3,9 +3,9 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>core-util</artifactId>
+	<artifactId>core-utils</artifactId>
 	<packaging>jar</packaging>
-	<name>core-util</name>
+	<name>core-utils</name>
 	
     <parent>
         <groupId>${groupId}</groupId>
@@ -24,6 +24,6 @@
 	</dependencies>
 	
 	<build>
-		<finalName>core-util</finalName>
+		<finalName>core-utils</finalName>
 	</build>
 </project>

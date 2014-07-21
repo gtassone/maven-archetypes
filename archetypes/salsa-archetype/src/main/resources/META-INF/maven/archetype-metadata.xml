@@ -21,6 +21,8 @@
 			<directory>core</directory>
 			<includes>
 				<include>**/*.java</include>
+				<include>**/*.xml</include>
+				<include>**/*.properties</include>
 				<include>**/pom.xml</include>
 			</includes>
 		</fileSet>
