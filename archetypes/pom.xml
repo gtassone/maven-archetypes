@@ -28,6 +28,5 @@
 <!--         <module>jsf-fragment-archetype</module>
         <module>jsf-portal-archetype</module>
         <module>jee-service-archetype</module> -->
-    <module>picante</module>
   </modules>
 </project>
