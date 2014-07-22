@@ -4,21 +4,49 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+
 import org.usac.${artifactId}.core.model.BaseEntity;
 import org.usac.${artifactId}.core.model.Unique;
 import org.usac.${artifactId}.core.service.base.dao.BaseDao;
-import org.usac.${artifactId}.core.service.search.SearchCriteria;
-import org.usac.${artifactId}.core.service.querydsl.QueryDslDaoUtils;
+import org.usac.${artifactId}.core.service.search.Search;
 import org.usac.${artifactId}.core.service.search.SearchCriteria;
 import org.usac.${artifactId}.core.service.search.SortOrderList;
 
 import com.mysema.query.jpa.impl.JPAQuery;
 import com.mysema.query.types.EntityPath;
+import com.mysema.query.types.path.BeanPath;
 
-public abstract class BaseQueryDslDao<T extends BaseEntity> extends BaseDao<T> {
+/**
+ * Search base class implementation which uses QueryDsl.
+ * 
+ * @author gtassone
+ *
+ * @param <T>
+ */
+public abstract class BaseQueryDslSearch<T extends BaseEntity> implements Search<T> {
 
-	protected BaseQueryDslDao(Class<T> entityClass) {
-		super(entityClass);
+	private BaseDao<T> dao;
+
+	/**
+	 * setter and injection point for DAO.
+	 * 
+	 * A BaseDao handle is required to access the EntityManager when performing
+	 * Search.
+	 * 
+	 * @param dao
+	 */
+	protected void setDao(BaseDao<T> dao) {
+		this.dao = dao;
+	}
+
+	protected EntityManager getEntityManager() {
+		return dao.getEntityManager();
+	}
+
+	@Override
+	public int count(SearchCriteria<? super T> criteria) {
+		return 0;
 	}
 
 	/**
@@ -28,21 +56,20 @@ public abstract class BaseQueryDslDao<T extends BaseEntity> extends BaseDao<T> {
 	public List<T> search(SearchCriteria<? super T> searchCriteria) {
 		List<T> entityList = new ArrayList<>();
 
-		for (T entity : getEntities(getEntityPath(),
-				generateSearchQuery(searchCriteria))) {
-			entityList.add(entity);
-		}
+		 for (T entity : getEntities(getEntityPath(),
+		 generateSearchQuery(searchCriteria))) {
+		 entityList.add(entity);
+		 }
 		return Collections.unmodifiableList(entityList);
 	}
-
+	
 	protected List<T> getEntities(EntityPath<T> entityPath, JPAQuery query) {
 		return query.list(entityPath);
 	}
 
-	protected JPAQuery generateSearchQuery(
-			SearchCriteria<? super T> searchCriteria) {
-		JPAQuery query = new JPAQuery(getEntityManager())
-				.from(getEntityPath());
+	protected JPAQuery generateSearchQuery(SearchCriteria<? super T> searchCriteria) {
+		JPAQuery query = new JPAQuery(getEntityManager()).from(getEntityPath());
+
 		addSearchCriteria(query, searchCriteria);
 
 		 // Limit the rows to the range requested
@@ -104,5 +131,4 @@ public abstract class BaseQueryDslDao<T extends BaseEntity> extends BaseDao<T> {
      * @return filtered Sort Order List
      */
     protected abstract SortOrderList filterSortOrderList(SortOrderList sortOrderList);
-
 }

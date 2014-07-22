@@ -196,7 +196,7 @@ $symbol_escape = '\' )
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-jpa</artifactId>
-                <version>3.2.2.RELEASE</version>
+                <version>1.6.1.RELEASE</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.springframework</groupId>
@@ -208,7 +208,7 @@ $symbol_escape = '\' )
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-commons</artifactId>
-                <version>1.5.2.RELEASE</version>
+                <version>1.8.1.RELEASE</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.springframework</groupId>
@@ -230,11 +230,6 @@ $symbol_escape = '\' )
             </dependency>
 
             <!-- Commons -->
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>2.6</version>
-            </dependency>
 
             <dependency>
                 <groupId>commons-fileupload</groupId>
@@ -265,7 +260,13 @@ $symbol_escape = '\' )
                 <artifactId>commons-lang3</artifactId>
                 <version>3.1</version>
             </dependency>
-
+            
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>4.0</version>
+            </dependency>
+            
             <dependency>
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
@@ -332,5 +333,29 @@ $symbol_escape = '\' )
 
 	<build>
 		<finalName>${artifactId}</finalName>
+		      <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.mysema.maven</groupId>
+                    <artifactId>apt-maven-plugin</artifactId>
+                    <version>1.0.9</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>process</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>target/generated-sources/java</outputDirectory>
+                                <processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
+                                <options>
+                                    <querydsl.entityAccessors>true</querydsl.entityAccessors>
+                                </options>
+                                <showWarnings>true</showWarnings>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
 	</build>
 </project>

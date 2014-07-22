@@ -11,7 +11,8 @@ import org.usac.${artifactId}.core.model.BaseEntity;
  * 
  * @author gtassone
  * 
- * @param <T> The JPA Entity type for this DAO.
+ * @param <T>
+ *            The JPA Entity type for this DAO.
  */
 public abstract class BaseDao<T extends BaseEntity> implements Dao<T> {
 
@@ -23,15 +24,34 @@ public abstract class BaseDao<T extends BaseEntity> implements Dao<T> {
 		this.entityClass = entityClass;
 	}
 
+	/**
+	 * Setter and injection point for EntityManager.
+	 * 
+	 * @param em
+	 *            the EntityManager.
+	 */
+	protected void setEntityManager(EntityManager em) {
+		this.entityManager = em;
+	}
+
+	/**
+	 * 
+	 */
 	protected void flushTransaction() {
 		entityManager.flush();
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public T newInstance() {
 		return BaseEntity.newInstance(entityClass);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public T get(String id) {
 		T entity = entityManager.find(entityClass, id);
@@ -59,12 +79,15 @@ public abstract class BaseDao<T extends BaseEntity> implements Dao<T> {
 		return true;
 	}
 
+	/**
+	 * provides access to the EntityManager for this DAO.
+	 * 
+	 * This allows search implementations to access the EntityManager directly.
+	 * 
+	 * @return the EntityManager used by this DAO.
+	 */
 	public EntityManager getEntityManager() {
 		return entityManager;
-	}
-
-	public void setEntityManager(EntityManager em) {
-		this.entityManager = em;
 	}
 
 }

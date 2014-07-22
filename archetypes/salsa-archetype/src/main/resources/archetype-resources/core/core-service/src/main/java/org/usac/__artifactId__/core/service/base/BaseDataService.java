@@ -6,6 +6,9 @@ import org.usac.${artifactId}.core.model.BaseEntity;
 import org.usac.${artifactId}.core.service.DataService;
 import org.usac.${artifactId}.core.service.base.dao.Dao;
 import org.usac.${artifactId}.core.service.search.SearchCriteria;
+import org.usac.${artifactId}.core.service.DataService;
+import org.usac.${artifactId}.core.service.base.dao.Dao;
+import org.usac.${artifactId}.core.service.search.SearchCriteria;
 
 /**
  * Base implementation for DataServices.
@@ -34,27 +37,42 @@ public abstract class BaseDataService<I, E extends I> implements DataService<I> 
 		this.clazz = clazz;
 	}
 
-	public void setDao(Dao<E> dao) {
+	/**
+	 * Setter and injection point for DAO.
+	 * @param dao
+	 */
+	protected void setDao(Dao<E> dao) {
 		this.dao = dao;
 	}
 
-	// create
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
 	public I newInstance() {
 		return dao.newInstance();
 	}
 
-	// read
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
 	public I get(String id) {
 		return dao.get(id);
 	}
 
-	// search
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
 	public List<? extends I> search(SearchCriteria<I> criteria) {
 		return dao.search(criteria);
 	}
 
-	// update instead of modify, because a newInstance isn't saved until its
-	// saved
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
 	public I update(I data) {
 		if (!(clazz.isInstance(data))) {
 			throw new IllegalArgumentException();
@@ -62,7 +80,10 @@ public abstract class BaseDataService<I, E extends I> implements DataService<I> 
 		return dao.update((E) data);
 	}
 
-	// delete
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
 	public boolean delete(I data) {
 		if (!(clazz.isInstance(data))) {
 			throw new IllegalArgumentException();

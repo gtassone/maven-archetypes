@@ -21,6 +21,7 @@
         <module>core-model</module>
         <module>core-entities</module>
         <module>core-service</module>
+        <module>core-spring</module>
         <module>core-querydsl</module>
     </modules>
     

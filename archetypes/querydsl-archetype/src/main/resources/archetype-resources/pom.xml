@@ -18,6 +18,29 @@
 	</parent>
 
 	<dependencies>
+        <dependency>
+        <groupId>${groupId}</groupId>
+            <artifactId>core-model</artifactId>
+            <version>${symbol_dollar}{project.version}</version>
+        </dependency>
+
+        <dependency>
+        <groupId>${groupId}</groupId>
+            <artifactId>core-entities</artifactId>
+            <version>${symbol_dollar}{project.version}</version>
+        </dependency>
+
+        <dependency>
+        <groupId>${groupId}</groupId>
+            <artifactId>core-service</artifactId>
+            <version>${symbol_dollar}{project.version}</version>
+        </dependency>
+
+        <dependency>
+        <groupId>${groupId}</groupId>
+            <artifactId>core-querydsl</artifactId>
+            <version>${symbol_dollar}{project.version}</version>
+        </dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
@@ -39,6 +62,37 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 		</dependency>
 
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
+        
 		<!-- QueryDSL -->
 		<dependency>
 			<groupId>com.mysema.querydsl</groupId>
@@ -59,6 +113,12 @@
 
 	<build>
 		<finalName>${artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>com.mysema.maven</groupId>
+				<artifactId>apt-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
 	</build>
 </project>
 
