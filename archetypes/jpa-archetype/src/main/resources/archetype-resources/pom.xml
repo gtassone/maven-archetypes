@@ -99,7 +99,7 @@
 						<version>1.3.1</version>
 						<executions>
 							<execution>
-								<phase>test</phase>
+								<phase>compile</phase>
 								<goals>
 									<goal>java</goal>
 								</goals>
@@ -112,7 +112,7 @@
 							<stopUnresponsiveDaemonThreads>true</stopUnresponsiveDaemonThreads>
 							<daemonThreadJoinTimeout>1000</daemonThreadJoinTimeout>
 							<arguments>
-								<argument>--persistence-unit=${persistenceUnit}</argument>
+								<argument>--persistence-unit=${persistenceUnit}-test</argument>
 							</arguments>
 						</configuration>
 					</plugin>
