@@ -7,12 +7,4 @@
 
 	<context:component-scan base-package="org.usac" />
 
-	<bean id="applicantSearch" class="org.usac.picante.core.service.search.StubSearch"></bean>
-	<bean id="applicationSearch" class="org.usac.picante.core.service.search.StubSearch"></bean>
-	<bean id="userSearch" class="org.usac.picante.core.service.search.StubSearch"></bean>
-	<bean id="userAccountSearch" class="org.usac.picante.core.service.search.StubSearch"></bean>
-	<bean id="formSearch" class="org.usac.picante.core.service.search.StubSearch"></bean>
-	<bean id="schoolSearch" class="org.usac.picante.core.service.search.StubSearch"></bean>
-	<bean id="librarySearch" class="org.usac.picante.core.service.search.StubSearch"></bean>
-
 </beans>
