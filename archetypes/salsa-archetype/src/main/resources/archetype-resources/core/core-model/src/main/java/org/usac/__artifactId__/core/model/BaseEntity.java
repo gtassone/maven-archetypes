@@ -30,10 +30,6 @@ public abstract class BaseEntity implements Unique, Serializable {
 
 	private static final Long CURRENT_VERSION = 1l;
 
-	public abstract String getId();
-
-	public abstract void setId(String id);
-
 	@Version
 	@Column(name = "VERSION", nullable = false)
 	protected Long version = CURRENT_VERSION;
@@ -69,11 +65,11 @@ public abstract class BaseEntity implements Unique, Serializable {
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * Called via BaseEntity.newInstance() to initialize the Entity with any
+	 * custom setup - id generation, contained Entity instantiation and wiring,
+	 * etc.
 	 */
-	public void initEntity() {
-		setId(UUID.randomUUID().toString());
-	}
+	protected abstract void initEntity();
 
 	public String toString() {
 		return "id='" + getId() + '\'' + ", version='" + version + '\'';

@@ -18,30 +18,105 @@
 	</parent>
 
 	<dependencies>
-        <dependency>
-            <groupId>${groupId}</groupId>
-            <artifactId>core-model</artifactId>
-            <version>${symbol_dollar}{project.version}</version>
-        </dependency>
 
-        <dependency>
-            <groupId>${groupId}</groupId>
-            <artifactId>core-service</artifactId>
-            <version>${symbol_dollar}{project.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>core-model</artifactId>
+			<version>${symbol_dollar}{project.version}</version>
+		</dependency>
 
-        <dependency>
-            <groupId>${groupId}</groupId>
-            <artifactId>core-entities</artifactId>
-            <version>${symbol_dollar}{project.version}</version>
-        </dependency>
-        
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>core-service</artifactId>
+			<version>${symbol_dollar}{project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>core-entities</artifactId>
+			<version>${symbol_dollar}{project.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>${groupId}</groupId>
 			<artifactId>${serviceApiArtifactId}</artifactId>
 			<version>${symbol_dollar}{project.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.usac.picante</groupId>
+			<artifactId>jpa-common</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Testing -->
+
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>jpa-common</artifactId>
+			<version>${symbol_dollar}{project.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jmockit</groupId>
+			<artifactId>jmockit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.dbunit</groupId>
+			<artifactId>dbunit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derby</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -35,8 +35,15 @@ public abstract class CoreEntity extends BaseEntity {
 		return id;
 	}
 
-	@Override
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected void initEntity() {
+		setId(UUID.randomUUID().toString());
 	}
 }

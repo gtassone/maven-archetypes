@@ -18,6 +18,10 @@ import org.usac.${artifactId}.core.service.search.SearchCriteria;
 @Transactional(propagation = Propagation.REQUIRED, readOnly = false, rollbackFor = Exception.class)
 public abstract class SpringDataService<I, E extends I> extends BaseDataService<I, E> {
 
+	protected SpringDataService(Class<E> clazz) {
+		super(clazz);
+	}
+
 	public I newInstance() {
 		return super.newInstance();
 	}

@@ -27,13 +27,8 @@ public abstract class BaseDataService<I, E extends I> implements DataService<I> 
 	private Dao<E> dao;
 
 	private Class<E> clazz;
-
-	/**
-	 * Provides the class of the implementation type parameter.
-	 * 
-	 * @param clazz
-	 */
-	protected void setClass(Class<E> clazz) {
+	
+	protected BaseDataService(Class<E> clazz) {
 		this.clazz = clazz;
 	}
 
