@@ -8,9 +8,12 @@
 		<requiredProperty key="projectName">
 			<defaultValue />
 		</requiredProperty>
-		<requiredProperty key="parentArtifactId">
-			<defaultValue />
-		</requiredProperty>
+        <requiredProperty key="parentArtifactId">
+            <defaultValue />
+        </requiredProperty>
+        <requiredProperty key="entitiesArtifactId">
+            <defaultValue />
+        </requiredProperty>
 	</requiredProperties>
 	<fileSets>
 		<fileSet filtered="true" packaged="true" encoding="UTF-8">
