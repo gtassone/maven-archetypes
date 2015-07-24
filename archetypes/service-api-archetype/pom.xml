@@ -3,7 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.usac.salsa</groupId>
+	<groupId>com.gmail.gtassone</groupId>
 	<artifactId>service-api-archetype</artifactId>
 	<name>service-api-archetype Salsa Archetype</name>
 	<description>Archetype for Service API projects.</description>

@@ -5,11 +5,11 @@
 
 	<parent>
     <artifactId>archetypes</artifactId>
-    <groupId>org.usac.salsa</groupId>
+    <groupId>com.gmail.gtassone</groupId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-	<groupId>org.usac.salsa</groupId>
+	<groupId>com.gmail.gtassone</groupId>
 	<artifactId>querydsl-spring-archetype</artifactId>
 	<name>querydsl-spring-archetype Salsa Archetype</name>
 	<description>Archetype for generating new QueryDSL/Spring projects.</description>

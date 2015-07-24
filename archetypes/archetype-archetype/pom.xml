@@ -3,7 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.usac.salsa</groupId>
+	<groupId>com.gmail.gtassone</groupId>
 	<artifactId>archetype-archetype</artifactId>
 	<name>archetype-archetype</name>
 	<description>Maven archetype for creating other archetype projects.</description>

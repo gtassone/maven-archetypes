@@ -3,7 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.usac.salsa</groupId>
+	<groupId>com.gmail.gtassone</groupId>
 	<artifactId>jpa-archetype</artifactId>
 	<name>jpa-archetype Salsa Archetype</name>
 	<description>Archetype for creating new JPA entity projects.</description>

@@ -3,7 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.usac.salsa</groupId>
+	<groupId>com.gmail.gtassone</groupId>
 	<artifactId>basic-fragment-archetype</artifactId>
 	<name>basic-fragment-archetype Salsa Archetype</name>
 	<description>Archetype for creating new Basic Web Fragment projects.</description>

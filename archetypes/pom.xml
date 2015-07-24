@@ -3,7 +3,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.usac.salsa</groupId>
+    <groupId>com.gmail.gtassone</groupId>
     <artifactId>archetypes</artifactId>
     <packaging>pom</packaging>
     <name>Salsa Archetypes</name>
@@ -11,7 +11,7 @@
 
     <modules>
         <module>archetype-archetype</module>
-        <module>salsa-archetype</module>
+        <module>parent-archetype</module>
         <module>common-archetype</module>
         <module>tool-archetype</module>
         <module>core-archetype</module>

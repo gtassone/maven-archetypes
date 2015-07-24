@@ -3,10 +3,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.usac.salsa</groupId>
-	<artifactId>salsa-archetype</artifactId>
-	<name>salsa-archetype Salsa Archetype</name>
-	<description>Archetype for creating the SALSA project hierarchy.</description>
+	<groupId>com.gmail.gtassone</groupId>
+	<artifactId>parent-archetype</artifactId>
+	<name>parent-archetype Parent Archetype</name>
+	<description>Archetype for creating the parent project hierarchy.</description>
 	<packaging>maven-archetype</packaging>
 
 	<version>0.0.1-SNAPSHOT</version>
